@@ -318,18 +318,22 @@ gsap.killTweensOf([
   "header nav div",
   ".conQuality-bestQuality",
   ".conQuality-bestQuality img.afterimage",
-  ".conQuality-text1 .detail.index0",
-  ".conQuality-text1 .detail.index1"
+  ".conQuality-1-text2",
+  ".conQuality-1-text3",
+  ".conQuality-1-text2 img.afterimage",
+  ".conQuality-1-text3 img.afterimage"
 ]);
 
 // 초기 상태 강제 설정
 gsap.set(".header h1 .black", { opacity: 0 });
 gsap.set(".header h1 .white", { opacity: 1 });
 gsap.set(".header nav div", { color: "#ffffff" });
-gsap.set(".conQuality-bestQuality", { opacity: 0.5, top: "50%", transform: "translate(-50%, -50%) scale(2)" });
+gsap.set(".conQuality-bestQuality", { opacity: 0.5, transform: "scale(2)" });
 gsap.set(".conQuality-bestQuality img.afterimage", { opacity: 1, transform: "scale(1)" });
-gsap.set(".conQuality-text1 .detail.index0", { opacity: 0 });
-gsap.set(".conQuality-text1 .detail.index1", { opacity: 0 });
+gsap.set(".conQuality-1-text2", { opacity: 0, transform: "scale(2)" });
+gsap.set(".conQuality-1-text2 img.afterimage", { opacity: 1, transform: "scale(1)" });
+gsap.set(".conQuality-1-text3", { opacity: 0, transform: "scale(2)" });
+gsap.set(".conQuality-1-text3 img.afterimage", { opacity: 1, transform: "scale(1)" });
 
 // 애니메이션 실행
 gsap.timeline()
@@ -346,21 +350,30 @@ gsap.timeline()
     { color: "#ffffff", duration: 0.8 }
   , "<")
   .fromTo('.conQuality-bestQuality', 
-    { opacity: 0.5, top: '50%', transform: 'translate(-50%, -50%) scale(2)' },
-    { opacity: 1, top: '32%', transform: 'translate(-50%, -50%) scale(0.3)', duration: 0.3 }
+    { opacity: 0.5, transform: 'scale(2)' },
+    { opacity: 1, transform: 'scale(0.8)', duration: 0.3 }
   , "<")
   .fromTo('.conQuality-bestQuality img.afterimage', 
     { opacity: 1, transform: 'scale(1)' }, 
     { opacity: 0, transform: 'scale(1.3)' }
     , "<80%")
-  .fromTo('.conQuality-text1 .detail.index0', 
-    { opacity: 0 },
-    { opacity: 1 }
-  )
-  .fromTo('.conQuality-text1 .detail.index1',
-    { opacity: 0 },
-    { opacity: 1 },
-  );
+  .fromTo('.conQuality-1-text2', 
+    { opacity: 0, transform: 'scale(2)' },
+    { opacity: 1, transform: 'scale(1)', duration: 0.3 }
+  , "<20%")
+  .fromTo('.conQuality-1-text2 img.afterimage', 
+    { opacity: 1, transform: 'scale(1)' }, 
+    { opacity: 0, transform: 'scale(1.3)' }
+    , "<80%")
+  .fromTo('.conQuality-1-text3', 
+    { opacity: 0, transform: 'scale(2)' },
+    { opacity: 1, transform: 'scale(1)', duration: 0.3 }
+  , "<20%")
+  .fromTo('.conQuality-1-text3 img.afterimage', 
+    { opacity: 1, transform: 'scale(1)' }, 
+    { opacity: 0, transform: 'scale(1.3)' }
+    , "<80%")
+
 };
 
 // 5번 슬라이드 애니메이션 설정 함수
@@ -370,27 +383,63 @@ gsap.killTweensOf([
   "header h1 .black",
   "header h1 .white",
   "header nav div",
+  ".conQuality-text2 .imgBox .txtBox",
+  ".conQuality-text2 .imgBox .afterimage",
+  ".conQuality-2-text2",
+  ".conQuality-2-text2 img.afterimage",
+  ".conQuality-2-text3",
+  ".conQuality-2-text3 img.afterimage"
 ]);
 
 // 초기 상태 강제 설정
 gsap.set(".header h1 .black", { opacity: 0 });
 gsap.set(".header h1 .white", { opacity: 1 });
 gsap.set(".header nav div", { color: "#ffffff" });
+gsap.set(".conQuality-text2 .imgBox .txtBox", { opacity: 0.5, transform: 'scale(2)' });
+gsap.set(".conQuality-text2 .imgBox .afterimage", { opacity: 1, transform: 'scale(1)' });
+gsap.set(".conQuality-2-text2", { opacity: 0, transform: 'scale(2)' });
+gsap.set(".conQuality-2-text2 img.afterimage", { opacity: 1, transform: 'scale(1)' });
+gsap.set(".conQuality-2-text3", { opacity: 0, transform: 'scale(2)' });
+gsap.set(".conQuality-2-text3 img.afterimage", {  opacity: 1, transform: 'scale(1)' });
 
 // 애니메이션 실행
 gsap.timeline()
-.fromTo("header h1 .black",
-  { opacity: 0 },
-  { opacity: 0, duration: 0.8 }
-)
-.fromTo("header h1 .white",
-  { opacity: 1 },
-  { opacity: 1, duration: 0.8 }
-, "<")
-.fromTo("header nav div", 
-{ color: "#ffffff" },
-{ color: "#ffffff", duration: 0.8 }
-, "<")
+  .fromTo("header h1 .black",
+    { opacity: 0 },
+    { opacity: 0, duration: 0.8 }
+  )
+  .fromTo("header h1 .white",
+    { opacity: 1 },
+    { opacity: 1, duration: 0.8 }
+  , "<")
+  .fromTo("header nav div", 
+  { color: "#ffffff" },
+  { color: "#ffffff", duration: 0.8 }
+  , "<")
+  .fromTo('.conQuality-text2 .imgBox .txtBox', 
+    { opacity: 0.5, transform: 'scale(2)' },
+    { opacity: 1, transform: 'scale(1)', duration: 0.3 }
+  , "<")
+  .fromTo('.conQuality-text2 .imgBox .afterimage', 
+    { opacity: 1, transform: 'scale(1)' }, 
+    { opacity: 0, transform: 'scale(1.3)' }
+    , "<80%")
+  .fromTo('.conQuality-2-text2', 
+    { opacity: 0, transform: 'scale(2)' },
+    { opacity: 1, transform: 'scale(1)', duration: 0.3 }
+  , "<20%")
+  .fromTo('.conQuality-2-text2 img.afterimage', 
+    { opacity: 1, transform: 'scale(1)' }, 
+    { opacity: 0, transform: 'scale(1.3)' }
+    , "<80%")
+  .fromTo('.conQuality-2-text3', 
+    { opacity: 0, transform: 'scale(2)' },
+    { opacity: 1, transform: 'scale(1)', duration: 0.3 }
+  , "<20%")
+  .fromTo('.conQuality-2-text3 img.afterimage', 
+    { opacity: 1, transform: 'scale(1)' }, 
+    { opacity: 0, transform: 'scale(1.3)' }
+    , "<80%")
 };
 
 // 6번 슬라이드 애니메이션 설정 함수
@@ -418,6 +467,27 @@ gsap.set(".conQuality-text4", { opacity: 0, left: 0 });
 gsap.set(".conQuality-text4 .detail span", { opacity: 0 });
 
 // 애니메이션 실행
+const animationTop = mediaQueryMobile.matches
+? "-90%"
+: mediaQueryTablet.matches
+? "-20%"
+: "-10%";
+const animationLeft = mediaQueryMobile.matches
+? "0"
+: mediaQueryTablet.matches
+? "-85%"
+: "-75%";
+const animationTop2 = mediaQueryMobile.matches
+? "-60%"
+: mediaQueryTablet.matches
+? "0"
+: "0";
+const animationTop3 = mediaQueryMobile.matches
+? "-30%"
+: mediaQueryTablet.matches
+? "0"
+: "0";
+
 gsap.timeline()
   .fromTo("header h1 .black",
     { opacity: 0 },
@@ -437,15 +507,15 @@ gsap.timeline()
   , "<")
   .fromTo('.conQuality-text3 .detail .underline',
     { width: 0 },
-    { width: "100%", duration: 0.4 }
-  )
+    { width: "100%", duration: 0.2 }
+  , "<50%")
   .fromTo('.conQuality-text3', 
     { top: "50%" },
-    { top: "-20%", duration: 0.4 }
+    { top: animationTop, duration: 0.4 }
   , "<180%")
   .fromTo('.conQuality-text4', 
-    { top: "100%", opacity: 0 },
-    { top: "0", opacity: 1, duration: 0.4 }
+    { top: "70%", opacity: 0 },
+    { top: animationTop2, opacity: 1, duration: 0.4 }
   , "<")
   .fromTo('.conQuality-text3', 
     { opacity: 1 },
@@ -453,12 +523,16 @@ gsap.timeline()
   , "<30%")
   .fromTo('.conQuality-text4', 
     { left: 0 },
-    { left: "-75%", duration: 0.4 }
+    { left: animationLeft, duration: 0.4 }
   )
+  .fromTo('.conQuality-text4 .imgBox', 
+    { y: "0" },
+    { y: animationTop3, duration: 0.4 }
+  , "<")
   .fromTo('.conQuality-text4 .detail span',
     { opacity: 0 },
     { stagger: { each: 0.06 }, opacity: 1, duration: 0.4 }
-  );
+  , "<50%");
 };
 
 // 7번 슬라이드 애니메이션 설정 함수
@@ -653,6 +727,14 @@ document.addEventListener("DOMContentLoaded", () => {
           delay: 3000,
           disableOnInteraction: false,
       },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
       mouseWheel: true,
       breakpoints: {
         640: {
@@ -748,6 +830,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+// 첫 화면의 scrollDownCircle 클릭 시 두 번째 슬라이드로 이동
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollDownCircle = document.querySelector(".conMain-scrollDownCircle");
+  scrollDownCircle.addEventListener("click", () => {
+    swiper.slideTo(1, 1000, false);
+  });
+});
+
+
+
+
 
 // top 버튼 클릭 시 상단 이동
 
@@ -829,3 +922,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+
